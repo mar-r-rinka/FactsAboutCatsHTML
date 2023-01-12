@@ -36,7 +36,6 @@ public class Main {
             posts = mapper.readValue(
                     response.getEntity().getContent(), new TypeReference<>() {
                     });
-//            posts.forEach(System.out::println);
             posts.stream().filter(value -> (value.getUpvotes() != 0 && value.getUpvotes() > 0)).forEach(System.out::println);
         } catch (IOException ex) {
             ex.printStackTrace();
